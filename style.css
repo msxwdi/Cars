@@ -1,0 +1,146 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'shoulder';
+    src: url(./fonts/Big_Shoulders_Display/BigShouldersDisplay-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'deca';
+    src: url(./fonts/Lexend_Deca/LexendDeca-Regular.ttf);
+    font-weight: 400;
+}
+
+:root{ /* برای متغیر رنگ */
+    --white: white;
+    --orange: #e28525;
+    --blue: #016972;
+    --green: #00403f;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* مرکز افقی */
+    align-items: center; /* مرکز عمودی */
+    min-height: 100vh;
+
+}
+
+.columns{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 914px; /*ماکسیمم سایزی که میتونه به خودش اختصاص بده */
+    margin-top: 2rem; /*واحدیه که میاد میبینه فونت سایز ایج تی ام ال چنده، و اندازه فونت سایز اچ نی ام ال رو دو برابر میکنه*/
+}
+
+.column{
+    display: flex;
+    flex: 1; 
+    justify-content: center; /*محتوا رو وسط قرار میداد*/
+} 
+
+.card{
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    padding: 3em;
+    color: var(--white);
+}
+
+.column:first-child .card{
+    padding: 50px;
+    border-top-left-radius: 10px; /* برای گرد کردن دور کادر*/
+    border-bottom-left-radius: 10px;
+}
+
+.column:last-child .card{
+    padding: 50px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card-sedan{
+    background-color: var(--orange);
+}
+
+.card-suvs{
+    background-color: var(--blue);
+}
+
+.card-luxury{
+    background-color: var(--green);
+}
+
+.card-title{
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-family: 'shoulder';
+    font-weight: 700;
+}
+
+.card-description{
+    line-height: 2; /*فاصله بین خطوط*/
+    margin: 0;
+    margin-bottom: 4rem;
+    /*max-width: 35ch; به تعداد کلمات میره خط بعدی*/
+    font-family: 'deca';
+}
+
+a{
+    
+    text-decoration: unset;
+    color: unset;
+}
+
+.card-link{
+    margin: 0 0 auto auto;
+    text-align: center;
+    background-color: var(--white);
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: var(--orange);
+    font-family: 'deca';
+}
+
+.card-link:hover{
+    background-color: transparent; 
+    border: 2px solid var(--white);
+    color: var(--white);
+
+}
+
+.card-img{
+    width: 75px;
+}
+
+img{
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (max-width: 576px) { 
+    .columns{
+        flex-flow: column;
+    }
+
+}
+
+
